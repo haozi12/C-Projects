@@ -9,7 +9,7 @@ int play(void) {
 	int target = rand() % 100;
 	printf("start:\nThe target number is in the range of 0 to 100.\ntype a number:");
 	for (;;) {
-		if (!scanf_s("%d", &user_input))
+		if (!scanf_s("%d", &user_input))//detect invalid input
 			return 1;
 		if (user_input == target) {
 			printf("You got the number.\n");
