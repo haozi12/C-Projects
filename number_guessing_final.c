@@ -35,22 +35,32 @@ int main(void) {
 			if (!play()) {
 				getchar();
 				printf("Want to play again?\nType 1 to start a new round or type 0 to exit:");
-			    scanf_s("%d", &play_or_exit);
-				if (play_or_exit == 1)
-					continue;
-				else if (play_or_exit == 0)
+			        if (scanf_s("%d", &play_or_exit))
 				{
+				    if (play_or_exit == 1)
+					continue;
+				    else if (play_or_exit == 0)
+				    {
 					printf("Game exit.\nPress any key to continue...");
 					getchar();
 					getchar();
 					break;
+				    }
+				    else 
+				    {
+					printf("\nInvalid input.\nGame exited.\nPress any key to continue...");
+					getchar();
+					getchar();
+					break;
+				    }
 				}
 				else {
 					printf("\nInvalid input.\nGame exited.\nPress any key to continue...");
 					getchar();
 					getchar();
 					break;
-				}
+				 }
+				
 			}
 			else {
 				getchar();
